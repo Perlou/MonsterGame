@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>MonsterGame</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=640, user-scalable=no, target-densityDpi=device-dpi">
+</head>
+<body>
+
+	<section id="animation" style="display:none;">
+		<section class="sectionIn bgColor">
+			<div class="Bg-page1"></div>
+			<div class="bg-start"></div>
+			<div class="main_page1">
+				<div class="rocket"></div>
+				<div class="miaov"></div>
+				<div class="thanks"></div>
+				<div class="widthyou"></div>
+			</div>
+			
+		</section>
+		<div class="arrow"></div>
+		<div class="music musicRun" id="anMusic">
+			<audio src="./audio/bg.mp3"></audio>
+			<!-- <audio src="./audio/bg.mp3" autoplay="true" preload="auto"></audio> -->
+		</div>
+
+		<div class="loading" id="loading"><span></span></div>		
+	</section>
+
+
+	<section id="game" class="bgColor">
+		<div class="Bg-game-page"></div>
+		<div class="bg-game"></div>
+		<div class="typeBar">
+			<div class="score">X100</div>
+			<div class="time">10秒</div>
+		</div>
+
+		<canvas id="gameCanvas" width="100%" height="100%"></canvas>
+
+		<div class="music musicRun" id="gameMusic">
+			<audio src="./audio/monster.mp3"></audio>
+			<!-- <audio src="./audio/monster.mp3" autoplay="true" preload="auto"></audio> -->
+		</div>
+	</section>
+
+	<script type="text/javascript" src="./assets/app.js"></script>
+
+</body>
+</html>

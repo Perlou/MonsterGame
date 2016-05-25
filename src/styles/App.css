@@ -1,0 +1,265 @@
+/**
+ * @author Perlou
+ * @App.css
+ */
+
+/** reset **/
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: '微软雅黑';
+}
+
+section {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/** common **/
+
+
+
+/** page1 **/
+.bgColor {
+  background-color: #2d4081;
+}
+
+.Bg-page1, .Bg-game-page {
+  width: 429px;
+  height: 429px;
+  border: 1px solid #1f2b57;
+  background-color: #233264;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -214px 0 0 -214px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 113px #283972, 0 0 0 114px #223161, 0 0 0 193px #2a3d79, 0 0 0 194px #273971, 0 0 0 254px #2c3f7e, 0 0 0 255px #2a3c79;
+}
+
+.bg-start {
+  width: 100%;
+  height: 100%;
+  background: url(../images/bgStart.png) no-repeat;
+  background-size: cover;
+  position: absolute;
+}
+
+.main_page1 {
+  width: 429px;
+  height: 429px;
+  position: absolute;
+  left: 50%;
+  top: 50%;    
+  margin: -214px 0 0 -214px;
+}
+
+.main_page1 .rocket {
+  width: 165px;
+  height: 195px;
+  position: absolute;
+  top: -29px;
+  left: 48px;
+  background: url(../images/rocket.png) no-repeat;
+  opacity: 0;
+}
+
+.main_page1 .thanks {
+  width: 399px;
+  height: 228px;
+  position: absolute;
+  top: 43px;
+  left: 38px;
+  background: url(../images/thanks.png) no-repeat;
+  opacity: 0;
+}
+
+.main_page1 .widthyou {
+  width: 364px;
+  height: 134px;
+  position: absolute;
+  top: 208px;
+  left: 38px;
+  background: url(../images/widthyou.png) no-repeat;
+  opacity: 0;
+}
+
+.main_page1 .miaov {
+  width: 193px;
+  height: 82px;
+  position: absolute;
+  top: -6px;
+  left: 234px;
+  background: url(../images/monster2.png) no-repeat;
+  opacity: 0;
+}
+
+.arrow{
+  width: 90px;
+  height: 65px;
+  position: absolute;
+  left: 50%;
+  margin-left: -45px;
+  bottom: 40px; 
+  background: url(../images/arrow2.png) no-repeat;
+  animation: arrow 1s infinite;
+  z-index: 10;
+}
+
+.music {
+  width: 50px;
+  height: 47px;
+  position: absolute; 
+  bottom: 14px;
+  right: 8px; 
+  z-index: 10;
+}
+
+.musicRun {
+  background: url(../images/run.png) no-repeat;
+  animation: musicRun 3s infinite linear;
+}
+
+.musicStop {
+  background: url(../images/stop.png) no-repeat;
+}
+
+.loading {
+  width: 465px;
+  height: 28px;
+  border: 1px solid #4091dc;
+  border-radius: 14px;
+  position: absolute;
+  left: 50%;
+  bottom: 120px;
+  margin-left: -232px;
+  overflow: hidden;
+  z-index: 20;
+}
+
+.loading span {
+  width: 0;
+  height: 28px;
+  display: block;
+  background: #4091dc;
+  transition: 0.4s;
+}
+
+/** end page1 **/
+
+/** animations **/
+
+.sectionIn .main_page1 .rocket {
+  animation: rocket 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.sectionIn .main_page1 .thanks {
+  animation: thanks 0.6s;
+  animation-delay: 0.6s;
+  animation-fill-mode: forwards;
+}
+
+.sectionIn .main_page1 .widthyou {
+  animation: withyou 0.6s;
+  animation-delay: 0.8s;
+  animation-fill-mode: forwards;
+}
+
+.sectionIn .main_page1 .miaov {
+  animation: miaov 0.5s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+.sectionOut .main_page1 .rocket {
+  animation: rocketOut 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.sectionOut .main_page1 .thanks {
+  animation: thanksOut 0.6s;
+  animation-fill-mode: forwards;
+}
+
+.sectionOut .main_page1 .widthyou {
+  animation: withyouOut 0.6s;
+  animation-fill-mode: forwards;
+}
+
+.sectionOut .main_page1 .miaov {
+  animation: miaovOut 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.sectionOut .bg-start {
+  animation: starOut 0.6s;
+  animation-fill-mode: forwards;
+}
+
+.sectionOut .Bg-page1 {
+  animation: circleOut 0.6s;
+  animation-fill-mode: forwards;
+}
+
+/** end animations **/
+
+/** game **/
+#gameCanvas {
+  position: absolute;
+  z-index: 20;
+}
+
+#game {
+
+}
+
+#game .bg-game {
+  width: 100%;
+  height: 100%;
+  background: url(../images/star_bg.png) no-repeat;
+  background-size: cover;
+  position: absolute;
+}
+
+#game .typeBar {
+  width: 100%;
+  height: 80px; 
+  background-color: rgba(0,0,0,0.4);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 30;
+}
+
+.typeBar .score {
+  width: 263px; 
+  height: 100%;
+  float: left;
+  background: url(../images/monster4.png) no-repeat 23px 18px;
+  background-size: 59px 51px;
+  text-indent: 82px;
+  line-height: 74px;
+  font-size: 30px;
+  color: #55b9f8;
+}
+
+.typeBar .time {
+  width: 180px;
+  height: 100%;
+  float: left;
+  background: url(../images/time.png) no-repeat 0 16px;
+  text-indent: 56px;
+  line-height: 74px;
+  font-size: 30px;
+  color: #ffe400;
+}
+
