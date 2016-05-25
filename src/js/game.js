@@ -110,10 +110,14 @@ gamePage.prototype = {
 		}
 	},
 	monsterMove: function(option){
-		jc('#' + option.obj).animate({
-			x: 300,
-			y: 300
-		},1000);
+		console.log(option);
+		setTimeout(function(){
+			jc('#' + option.obj).animate({
+				x: 300,
+				y: 300
+			},1000);		
+		},60);
+
 	}
 };
 

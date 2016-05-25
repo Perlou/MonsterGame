@@ -23,7 +23,7 @@
     "url": "git+https://github.com/Perlou/MonsterGame.git"
   },
   "keywords": [],
-  "author": "Your name here",
+  "author": "Perlou",
   "devDependencies": {
     "babel-core": "^6.0.0",
     "babel-eslint": "^6.0.0",
