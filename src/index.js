@@ -31,13 +31,10 @@ var loadImg = [
 ];
 
 var loadF = false;
-
 var imgNum = 0;
 
 loading();
-
 changePage();
-
 musicShow();
 
 function loading(){
@@ -76,6 +73,8 @@ function changePage(){
 		now = getByClass(document, 'section', 'sectionIn')[0],
 		index = 0,	
 		downY = 0;
+
+	gameBegin();	
 
 	bind(oAnSection, 'touchstart', function(ev){
 		ev = ev || event;
@@ -136,11 +135,10 @@ function changePage(){
 			
 			// game
 			var game = new gamePage();
-			
+			game.begin();
 
-		},1500);
+		},100);
 
-		console.log('gameBegin');
 	}
 	
 };
