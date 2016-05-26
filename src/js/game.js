@@ -371,6 +371,10 @@ gamePage.prototype.bindEvent = function(){
 		
 	var _this = this;
 
+	document.ontouchstart = function(ev){
+		
+	}
+
 	bind(document,'touchstart',function(ev){
 		var ev = ev || event;
 		ev.preventDefault();
