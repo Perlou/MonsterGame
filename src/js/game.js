@@ -73,7 +73,7 @@ function gamePage(options){
 		m1: [180,138],
 		m2: [146,84],
 		m3: [103,94],
-		m4: [92,107],
+		m4: [92,107]
 	};
 	_this.time = [10];
 	
@@ -141,7 +141,6 @@ function gamePage(options){
 			break;
 		}
 		
-		// var firstPositionArea = getNum({num:1,min:0,max:3});		
 	}
 
 	monomer.prototype.run = function(){
@@ -193,7 +192,10 @@ function gamePage(options){
 			_this.position[_mon.obj][0] = 	_mon.x;
 			_this.position[_mon.obj][1] = 	_mon.y;
 			
-			jc('#'+_mon.obj).animate({x:_mon.x,y:_mon.y},1);
+			jc('#'+_mon.obj).animate({
+				x:_mon.x,
+				y:_mon.y
+			},1);
 			
 	};
 	
@@ -202,7 +204,7 @@ function gamePage(options){
 		if(option.next){
 			_this.num ++;
 			s('score').innerHTML = 'X' + Number(_this.num);
-		};
+		}
 		
 		var _mon = this;
 		_mon.timeC = false;
@@ -213,8 +215,6 @@ function gamePage(options){
 		jc.start('page',true);
 		var monster=new Image();
 		monster.src='../images/monster1'+ mon.findNum()[0] + '.png';
-
-		console.log(mon.findNum());
 		
 		monster.onload=function(){
 			jc.start('page');
@@ -243,8 +243,8 @@ function gamePage(options){
 			for( var b in _this.monomer){
 				if(_this.monomer[b]){
 					return false;
-				};
-			};
+				}
+			}
 			
 			clearTimeout(_this.timeC);
 			clearInterval(_this.countdown);
@@ -255,7 +255,7 @@ function gamePage(options){
 					jc.clear();
 					_this.next();
 				},2000);
-			};
+			}
 			
 		}
 	};
@@ -288,11 +288,7 @@ function gamePage(options){
 			};
 			
 			clearInterval(_this.countdown);
-			// document.ontouchstart = null;
-
-            // document.removeEventListerner('touchstart', function(){
-            // 	console.log(1);
-            // }, false);
+			document.ontouchstart = null;
 
 		},(_this.time[0]+1)*1000);
 		
@@ -316,12 +312,26 @@ function gamePage(options){
 			}
 			
 			setTimeout(function(){
-				_this.mon["mon" + getNum({min:0,max:4,num:1})[0]]( {canvas:'page',id:"span"+i+_this.score} );
-				_this.monomer["span"+i + _this.score] = new monomer({obj:"span"+i+_this.score,jd:j,r:r,clockwise:clockwise});
+				_this.mon["mon" + getNum({
+					min:0,
+					max:4,
+					num:1
+				})[0]]({
+					canvas:'page',
+					id:"span"+i+_this.score
+				});
+
+				_this.monomer["span"+i + _this.score] = new monomer({
+					obj:"span"+i+_this.score,
+					jd:j,
+					r:r,
+					clockwise:clockwise
+				});
+
 				i++;
 				if(i<_this.monNum[_this.score]){
 					create();
-				};
+				}
 			},200);
 		}
 	};
@@ -372,17 +382,17 @@ gamePage.prototype.bindEvent = function(){
 	var _this = this;
 
 	document.ontouchstart = function(ev){
-		var ev = ev || event;
+		var ev = ev || event,
+			touchs = ev.changedTouches[0],
+			touchY = touchs.pageY,
+			touchX = touchs.pageX;
 		ev.preventDefault();
-		
-		var touchs = ev.changedTouches[0];
-		var touchY = touchs.pageY;
-		var touchX = touchs.pageX;
-		
-		for ( var a in _this.position){
-			
+		for ( var a in _this.position){	
 			if( touchX >= _this.position[a][0]-50 && touchX <= (_this.position[a][0] + 150) && touchY >= _this.position[a][1]-50 && touchY <= (_this.position[a][1] + 150)){
-				_this.monomer[a].Stop({a:a,next:true});
+				_this.monomer[a].Stop({
+					a:a,
+					next:true
+				});
 				return false;
 			}
 		}
@@ -475,18 +485,18 @@ function alertWin( option ){
 			remove(win);
 			gamePage.int();
 			gamePage.bindEvent();
-			s('prompt')&&remove(s('prompt'));
-			
+			s('prompt') && remove(s('prompt'));			
 		};
 		
-		if(win.getElementsByTagName('a')[0]){win.getElementsByTagName('a')[0].ontouchstart = function( ev ){
-			
-			var ev = ev || event;
-			ev.stopPropagation ? ev.stopPropagation() : ev.cancelBubble = true;
-			 showPrompt();
-		};}
-	};
-};
+		if(win.getElementsByTagName('a')[0]){
+			win.getElementsByTagName('a')[0].ontouchstart = function( ev ){				
+				var ev = ev || event;
+				ev.stopPropagation ? ev.stopPropagation() : ev.cancelBubble = true;
+				showPrompt();
+			};
+		}
+	}
+}
 
 function showPrompt( option ){
 	s('scrollBg').style.opacity = 0;
@@ -501,26 +511,26 @@ function showPrompt( option ){
 		remove(div);
 	};
 	
-};
+}
 
 
 function musicShow(){
-	var au = s('music').getElementsByTagName('audio')[0];
+	var au = s('gameMusic').getElementsByTagName('audio')[0];
 	au.autoPlay;
 	au.play();
 	
-	stopPP(s('music'));
+	stopPP(s('gameMusic'));
 	
-	bind(s('music'),'touchstart',function(){
+	bind(s('gameMusic'),'touchstart',function(){
 		if(au.paused){
 			au.play();
-			addClass(s('music'), 'music');
-			removeClass(s('music'),'musicStop');
+			addClass(s('gameMusic'), 'music');
+			removeClass(s('gameMusic'),'musicStop');
 		}
 		else{
 			au.pause();
-			removeClass(s('music'), 'music');
-			addClass(s('music'),'musicStop');
+			removeClass(s('gameMusic'), 'music');
+			addClass(s('gameMusic'),'musicStop');
 		}
 	});
 }
@@ -532,6 +542,7 @@ function stopPP(obj) { //阻止点击事件冒泡
         ev.stopPropagation ? ev.stopPropagation() : ev.cancelBubble = true;
     });
 }
+
 document.ontouchstart = function( ev ){
 	ev.preventDefault();		
 };
