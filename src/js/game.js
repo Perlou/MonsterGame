@@ -372,10 +372,6 @@ gamePage.prototype.bindEvent = function(){
 	var _this = this;
 
 	document.ontouchstart = function(ev){
-		
-	}
-
-	bind(document,'touchstart',function(ev){
 		var ev = ev || event;
 		ev.preventDefault();
 		
@@ -390,8 +386,6 @@ gamePage.prototype.bindEvent = function(){
 				return false;
 			}
 		}
-
-		console.log(1);
 		
 		shake();
 		function shake(){
@@ -406,7 +400,38 @@ gamePage.prototype.bindEvent = function(){
 				remove( div );
 			},1000);
 		}
-	});
+	};
+
+	// bind(document,'touchstart',function(ev){
+	// 	var ev = ev || event;
+	// 	ev.preventDefault();
+		
+	// 	var touchs = ev.changedTouches[0];
+	// 	var touchY = touchs.pageY;
+	// 	var touchX = touchs.pageX;
+		
+	// 	for ( var a in _this.position){
+			
+	// 		if( touchX >= _this.position[a][0]-50 && touchX <= (_this.position[a][0] + 150) && touchY >= _this.position[a][1]-50 && touchY <= (_this.position[a][1] + 150)){
+	// 			_this.monomer[a].Stop({a:a,next:true});
+	// 			return false;
+	// 		}
+	// 	}
+		
+	// 	shake();
+	// 	function shake(){
+	// 		var div = document.createElement('div');
+	// 		div.className = 'bg';
+	// 		div.id = 'bg';
+	// 		document.body.appendChild(div);
+	// 		addClass(document.body, 'shake');
+	// 		stopPP(div);
+	// 		setTimeout(function(){
+	// 			removeClass(document.body, 'shake');
+	// 			remove( div );
+	// 		},1000);
+	// 	}
+	// });
 
 };
 
@@ -421,7 +446,7 @@ gamePage.prototype.begin = function(){
 	</em><button>开始游戏</button>';
 	div.id = 'begin';
 	document.body.appendChild(div);
-	div.getElementsByTagName('button')[0].onclick = function( ev ){
+	div.getElementsByTagName('button')[0].ontouchstart = function( ev ){
 		var ev = ev || event;
 		ev.stopPropagation ? ev.stopPropagation() : ev.cancelBubble = true;
 		_this.next();
@@ -444,7 +469,7 @@ function alertWin( option ){
 		}
 		
 		document.body.appendChild(win);
-		win.getElementsByTagName('button')[0].onclick = function( ev ){
+		win.getElementsByTagName('button')[0].ontouchstart = function( ev ){
 			var ev = ev || event;
 			ev.stopPropagation ? ev.stopPropagation() : ev.cancelBubble = true;
 			remove(win);
