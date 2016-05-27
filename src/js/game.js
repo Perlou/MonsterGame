@@ -37,7 +37,7 @@ function gamePage(options){
 		mon1: function(option){
 			jc.start(option.canvas,true);
 			var monster1 = new Image();
-			monster1.src = '../images/monster1.png';
+			monster1.src = './images/monster1.png';
 			monster1.onload = function(){
 				jc.start(option.canvas);
 				jc.image(monster1,100,100,109,114).id(option.id).level(2);
@@ -46,7 +46,7 @@ function gamePage(options){
 		mon2: function(option){
 			jc.start(option.canvas,true);
 			var monster2 = new Image();
-			monster2.src = '../images/monster2.png';
+			monster2.src = './images/monster2.png';
 			monster2.onload = function(){
 				jc.start(option.canvas);
 				jc.image(monster2,-200,-200,109,113).id(option.id).level(2);
@@ -55,7 +55,7 @@ function gamePage(options){
 		mon3: function(option){
 			jc.start(option.canvas,true);
 			var monster3 = new Image();
-			monster3.src = '../images/monster3.png';
+			monster3.src = './images/monster3.png';
 			monster3.onload = function(){
 				jc.start(option.canvas);
 				jc.image(monster3,-200,-200,107,129).id(option.id).level(2);
@@ -64,7 +64,7 @@ function gamePage(options){
 		mon4: function(option){
 			jc.start(option.canvas,true);
 			var monster4 = new Image();
-			monster4.src = '../images/monster4.png';
+			monster4.src = './images/monster4.png';
 			monster4.onload = function(){
 				jc.start(option.canvas);
 				jc.image(monster4,-200,-200,125,110).id(option.id).level(2);
@@ -210,11 +210,12 @@ function gamePage(options){
 		_mon.timeC = false;
 		
 		var src = jc( '#'+_mon.obj )._img.src.split('/');
+		console.log(src);
 		var mon = src[src.length-1];
 		
 		jc.start('page',true);
 		var monster=new Image();
-		monster.src='../images/monster1'+ mon.findNum()[0] + '.png';
+		monster.src='./images/monster1'+ mon.findNum()[0] + '.png';
 		
 		monster.onload=function(){
 			jc.start('page');
@@ -456,7 +457,7 @@ gamePage.prototype.begin = function(){
 	</em><button>开始游戏</button>';
 	div.id = 'begin';
 	document.body.appendChild(div);
-	div.getElementsByTagName('button')[0].ontouchstart = function( ev ){
+	div.getElementsByTagName('button')[0].onclick = function( ev ){
 		var ev = ev || event;
 		ev.stopPropagation ? ev.stopPropagation() : ev.cancelBubble = true;
 		_this.next();
