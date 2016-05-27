@@ -74,8 +74,6 @@ function changePage(){
 		index = 0,	
 		downY = 0;
 
-	gameBegin();	
-
 	bind(oAnSection, 'touchstart', function(ev){
 		ev = ev || event;
 		ev.preventDefault();
