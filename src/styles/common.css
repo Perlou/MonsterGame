@@ -471,7 +471,7 @@ section .welcomeMain .thanks {
   position: absolute;
   top: 72px;
   z-index: 4;
-  -webkit-transform: translatey(400px);
+  -webkit-transform: translate3d(0,400px,0);
 }
 section .welcomeMain .rocket {
   width: 164px;
@@ -479,15 +479,15 @@ section .welcomeMain .rocket {
   position: absolute;
   top: 20px;
   left: 10px;
-  -webkit-transform: translatey(400px);
+  -webkit-transform: translate3d(0,400px,0);
 }
 section .welcomeMain .miaov {
   width: 193px;
   height: 82px;
   position: absolute;
-  top: 22px;
-  left: 171px;
-  -webkit-transform: translatey(6px) translatex(-10px);
+  top: 10px;
+  left: 188px;
+  -webkit-transform: translate3d(-10px,6px,0);
   opacity: 0;
 }
 section .welcomeMain .widthyou {
@@ -1010,7 +1010,7 @@ section.sectionIn .welcomeMain .rocket {
 section.sectionIn .welcomeMain .miaov {
   animation: miaovIn 0.3s;
   -webkit-animation: miaovIn 0.3s;
-  -webkit-animation-delay: 1.4s;
+  -webkit-animation-delay: 1s;
   animation-fill-mode: forwards;
   -webkit-animation-fill-mode: forwards;
 }

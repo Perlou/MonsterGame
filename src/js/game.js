@@ -30,7 +30,7 @@ function gamePage(options){
 
 	var _this = this;
 
-	alert('gameing123123');
+	alert('gameing666632424242342343');
 
 	s('page').width = view().w;
 	s('page').height = view().h;
@@ -474,7 +474,7 @@ function alertWin( option ){
 			var ev = ev || event;
 			ev.stopPropagation ? ev.stopPropagation() : ev.cancelBubble = true;
 			remove(win);
-			var game = new game();
+			var game = new gamePage();
 			game.begin();
 			game.int();
 			game.bindEvent();

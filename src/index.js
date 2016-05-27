@@ -20,7 +20,8 @@ var utils = require('./js/utils'),
 	remove = utils.remove,
 	view = utils.view,
 	getByClass = utils.getByClass,
-	s = utils.s;
+	s = utils.s,
+	lexChildren = utils.lexChildren;
 
 // var loadImg = [
 // 	require('./images/arrow2.png'),
@@ -96,6 +97,7 @@ loading();
 changePage();
 musicShow();
 
+
 function loading(){
 	var loadNum = 0,
 		oLoading = document.getElementById('ProgressBar').getElementsByTagName('span')[0];
@@ -108,7 +110,9 @@ function loading(){
 
 		aImg.onload = function(){
 			loadNum++;
-			oLoading.style.width = Math.floor(loadNum/loadImg.length) * 100 + '%';
+			// oLoading.style.width = Math.floor(loadNum/loadImg.length) * 100 + '%';
+			lexChildren( s('ProgressBar') )[0].style.width = Math.floor(((loadNum/loadImg.length).toFixed(2)*100)) + '%';
+			lexChildren( s('ProgressBar') )[1].innerHTML = Math.floor(((loadNum/loadImg.length).toFixed(2)*100));
 
 			if(loadNum == loadImg.length){
 				loadF = true;
