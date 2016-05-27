@@ -42,7 +42,7 @@ function gamePage(options){
 			monster1.src = './images/monster1.png';
 			monster1.onload = function(){
 				jc.start(option.canvas);
-				jc.image(monster1,100,100,109,114).id(option.id).level(2);
+				jc.image(monster1,-200,-200,109,114).id(option.id).level(2);
 			}
 		},
 		mon2: function(option){
