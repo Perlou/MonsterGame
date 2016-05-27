@@ -30,6 +30,8 @@ function gamePage(options){
 
 	var _this = this;
 
+	alert('game!');
+
 	s('page').width = view().w;
 	s('page').height = view().h;
 
