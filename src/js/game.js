@@ -457,8 +457,9 @@ gamePage.prototype.begin = function(){
 	</em><button>开始游戏</button>';
 	div.id = 'begin';
 	document.body.appendChild(div);
-	div.getElementsByTagName('button')[0].ontouchstart = function( ev ){
+	div.getElementsByTagName('button')[0].onclick = function( ev ){
 		var ev = ev || event;
+		alert('click');
 		ev.stopPropagation ? ev.stopPropagation() : ev.cancelBubble = true;
 		_this.next();
 		musicShow();
