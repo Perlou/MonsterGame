@@ -1,4 +1,0 @@
-/**
- * @author Perlou
- * @loading.js
- */
