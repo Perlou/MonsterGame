@@ -30,7 +30,7 @@ function gamePage(options){
 
 	var _this = this;
 
-	alert('gameing666632424242342343');
+	alert('gameing66663242');
 
 	s('page').width = view().w;
 	s('page').height = view().h;

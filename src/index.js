@@ -6,8 +6,6 @@
 'use strict';
 
 // css
-// require('./styles/App.css');
-// require('./styles/animation.css');
 require('./styles/move.css');
 require('./styles/common.css');
 //js
@@ -23,21 +21,6 @@ var utils = require('./js/utils'),
 	s = utils.s,
 	lexChildren = utils.lexChildren;
 
-// var loadImg = [
-// 	require('./images/arrow2.png'),
-// 	require('./images/bgStart.png'),
-// 	require('./images/rocket.png'),
-// 	require('./images/thanks.png'),
-// 	require('./images/thanks.png'),
-// 	require('./images/thanks.png'),
-// 	require('./images/thanks.png'),
-// 	require('./images/thanks.png'),
-// 	require('./images/thanks.png'),
-// 	require('./images/thanks.png'),
-// 	require('./images/thanks.png'),
-// 	require('./images/thanks.png'),
-// 	require('./images/widthyou.png')
-// ];
 var loadImg = [
 	require('./images/miaov.png'),
 	require('./images/thanks.png'),
