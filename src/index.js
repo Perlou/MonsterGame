@@ -149,7 +149,6 @@ function changePage(){
 		
 		if(index == 3 && num == -1 ){
 			gameBegin();
-			// window.location.href = 'game.html';
 		}
 		
 		removeClass(section[index], 'sectionIn');

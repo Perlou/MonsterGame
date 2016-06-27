@@ -6,7 +6,7 @@
 
 String.prototype.findNum = function(){
 	return this.match(/\d+/g);
-}
+};
 
 var utils = {
 	s: function(obj){

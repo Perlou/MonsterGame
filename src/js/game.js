@@ -19,8 +19,7 @@ var jc = require('./jCanvaScript'),
 
 String.prototype.findNum = function(){
 	return this.match(/\d+/g);
-}
-
+};
 
 /**
  * 游戏对象构造函数
@@ -29,8 +28,6 @@ String.prototype.findNum = function(){
 function gamePage(options){
 
 	var _this = this;
-
-	alert('gameing66663242');
 
 	s('page').width = view().w;
 	s('page').height = view().h;
@@ -274,7 +271,7 @@ function gamePage(options){
 		
 		_this.timeC = setTimeout(function(){
 			if(_this.num<=0){
-				alertWin( {text:'纳尼！你居然一个怪物都按不死！太逊了，给你一个机会，再来一次！',notshare:true} );
+				alertWin( {text:'你居然一个怪物都按不死！太逊了，给你一个机会，再来一次！',notshare:true} );
 			}else{
 				alertWin( {text:'恭喜你消灭了'+ _this.num +'只怪物！'} );
 			}
