@@ -399,38 +399,6 @@ gamePage.prototype.bindEvent = function(){
 			},1000);
 		}
 	};
-
-	// bind(document,'touchstart',function(ev){
-	// 	var ev = ev || event;
-	// 	ev.preventDefault();
-		
-	// 	var touchs = ev.changedTouches[0];
-	// 	var touchY = touchs.pageY;
-	// 	var touchX = touchs.pageX;
-		
-	// 	for ( var a in _this.position){
-			
-	// 		if( touchX >= _this.position[a][0]-50 && touchX <= (_this.position[a][0] + 150) && touchY >= _this.position[a][1]-50 && touchY <= (_this.position[a][1] + 150)){
-	// 			_this.monomer[a].Stop({a:a,next:true});
-	// 			return false;
-	// 		}
-	// 	}
-		
-	// 	shake();
-	// 	function shake(){
-	// 		var div = document.createElement('div');
-	// 		div.className = 'bg';
-	// 		div.id = 'bg';
-	// 		document.body.appendChild(div);
-	// 		addClass(document.body, 'shake');
-	// 		stopPP(div);
-	// 		setTimeout(function(){
-	// 			removeClass(document.body, 'shake');
-	// 			remove( div );
-	// 		},1000);
-	// 	}
-	// });
-
 };
 
 gamePage.prototype.begin = function(){
@@ -472,7 +440,7 @@ function alertWin( option ){
 			ev.stopPropagation ? ev.stopPropagation() : ev.cancelBubble = true;
 			remove(win);
 			var game = new gamePage();
-			game.begin();
+			// game.begin();
 			game.int();
 			game.bindEvent();
 			s('prompt') && remove(s('prompt'));			
